@@ -14,10 +14,10 @@ import java.util.Collections;
  */
 public class GebalanceerdeBinaireBoom extends BinaireBoom{
 
-	static Element wortel;
 	private ArrayList<Integer> getallenLijst;
 	
 	public GebalanceerdeBinaireBoom () {
+		super();
 		getallenLijst = new ArrayList<Integer>();
 	}
 	//methoden die enkel in de klasse zelf moeten gebruikt worden
@@ -62,7 +62,7 @@ public class GebalanceerdeBinaireBoom extends BinaireBoom{
 	
 	@Override
 	public void voegToe(Element element) {
-		super.voegToe(element.getWaarde());
+		super.voegToe(element);
 		stelListOp();
 	}
 	
@@ -80,16 +80,19 @@ public class GebalanceerdeBinaireBoom extends BinaireBoom{
 	
 	@Override
 	public void schrijfInOrder() {
+		super.wortel = tekenGebalanceerdeBinaireBoom(getallenLijst,0,getallenLijst.size()-1);
 		super.schrijfInOrder();
 	}
 	
 	@Override
 	public void schrijfPreOrder() {
+		super.wortel = tekenGebalanceerdeBinaireBoom(getallenLijst,0,getallenLijst.size()-1);
 		super.schrijfPreOrder();
 	}
 	
 	@Override
 	public void schrijfPostOrder() {
+		super.wortel = tekenGebalanceerdeBinaireBoom(getallenLijst,0,getallenLijst.size()-1);
 		super.schrijfPostOrder();
 	}
 	

@@ -3,7 +3,7 @@ import java.util.Stack;
 
 public class BinaireBoom {
 	
-	private Element wortel;
+	protected Element wortel;
 	
 	public BinaireBoom() {
 	}

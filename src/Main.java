@@ -26,7 +26,7 @@ public class Main {
 		System.out.println(wortel.getDiepte());
 		*/
 		
-		System.out.println("testing binaire boom");
+		/*System.out.println("testing binaire boom");
 		BinaireBoom b = new BinaireBoom();
 		b.voegToe(new Element(8));
 		b.voegToe(new Element(3));
@@ -48,6 +48,29 @@ public class Main {
 		b.verwijder(3);
 		b.schrijfInOrder();
 		System.out.println(b.getDiepte());
+		
+		System.out.println("");
+		System.out.println("");
+		System.out.println("balanceerde binaire boom");*/
+		
+		GebalanceerdeBinaireBoom gbbb = new GebalanceerdeBinaireBoom();
+		gbbb.voegToe(new Element(8));
+		gbbb.voegToe(new Element(3));
+		gbbb.voegToe(new Element(10));
+		gbbb.voegToe(new Element(1));
+		gbbb.voegToe(new Element(6));
+		System.out.println("inorder");
+		gbbb.schrijfInOrder();
+		System.out.println("preorder");
+		gbbb.schrijfPreOrder();
+		System.out.println("postorder");
+		gbbb.schrijfPostOrder();
+	
+		System.out.println("diepte");
+		System.out.println(gbbb.getDiepte());
+		
+		
+		
 	}
 
 }
