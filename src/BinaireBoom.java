@@ -129,7 +129,11 @@ public class BinaireBoom {
 				
 				if(evalueer.getWaarde()==getal) {
 					//dan is het het linker van keerTerug dat we moeten hebben om te verwijderen
+					Element links = evalueer.getLinks();
+					Element rechts = evalueer.getRechts();
 					keerTerug.setLinks(null);
+					this.voegToe(links);
+					this.voegToe(rechts);
 					klaar = true;
 				}
 				
@@ -138,7 +142,11 @@ public class BinaireBoom {
 				//naar rechts gaan
 				evalueer = evalueer.getRechts();
 				if(evalueer == null) {
+					Element links = evalueer.getLinks();
+					Element rechts = evalueer.getRechts();
 					keerTerug.setRechts(null);
+					this.voegToe(links);
+					this.voegToe(rechts);
 					klaar = true;
 				}
 			}
