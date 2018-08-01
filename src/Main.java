@@ -40,10 +40,14 @@ public class Main {
 		b.schrijfPreOrder();
 		System.out.println("postorder");
 		b.schrijfPostOrder();
+	
+		System.out.println("diepte");
+		System.out.println(b.getDiepte());
 		
 		b.voegToe(1);	//print dat het getal er al in zit uit
 		b.verwijder(3);
 		b.schrijfInOrder();
+		System.out.println(b.getDiepte());
 	}
 
 }

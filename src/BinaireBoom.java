@@ -1,7 +1,4 @@
 import java.util.ArrayList;
-
-
-//https://stackoverflow.com/questions/11263244/java-how-do-i-implement-a-generic-binary-search-tree
 import java.util.Stack;
 
 public class BinaireBoom {
@@ -190,9 +187,25 @@ public class BinaireBoom {
 	}
 
 	public int getDiepte() {
-		return wortel.getDiepte();
+		return getDiepte(wortel);
 	}
 
+	private int getDiepte(Element node) {
+		if(node == null) {	//checken van de wortel
+			return 0;
+		}
+		else{
+            int linksDiepte = getDiepte(node.getLinks());
+            int rechtsDiepte = getDiepte(node.getRechts());
 
-
+            if (linksDiepte > rechtsDiepte) {return (linksDiepte+1);}
+            else {return (rechtsDiepte+1);}
+        }
+			
+	}
+	
 }
+
+
+
+

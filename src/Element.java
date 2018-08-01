@@ -59,68 +59,7 @@ public class Element implements Comparable<Element> {
 		return this.waarde - elem2.waarde;
 	}
 	
-
-	public void voegToe(Element element) {
-		if(links == null && rechts ==null) {
-			links = new Element(element.getWaarde());
-		}
-		
-		else if(links !=null && rechts == null) {
-			rechts = new Element(element.getWaarde());
-		}
-		
-		
-		else if(links == null && rechts != null) {
-			links = new Element(element.getWaarde());
-		}
-		
-		
-		
-		
-		//als ze allebei al ingevuld zijn
-		else if(links != null && rechts != null) {
-			int diepteLinks = links.getDiepte();
-			int diepteRechts = rechts.getDiepte();
-			
-			//keuze voor de minst diepe, daar naartoe
-			if(diepteLinks <= diepteRechts) {
-				links.voegToe(element);
-			}
-			else {
-				//dus als rechts minder diep is
-				rechts.voegToe(element);
-			}
-		}
-		
-		
-		
-	}
-
-	public int getDiepte() {
-		if (links == null && rechts == null) {return -1;}
-		else if (links != null && rechts != null) {
-			//bereken de diepte van elke subtree
-			int diepteLinks = links.getDiepte();
-			int diepteRechts = rechts.getDiepte();
-			
-			if (diepteLinks > diepteRechts) {
-				return (diepteLinks +1);
-			}
-			else {
-				return (diepteRechts +1);
-			}
-		}
-		else if (links != null && rechts == null) {
-			int diepteLinks = links.getDiepte();
-			return (diepteLinks +1);
-		}
-		else if (links == null && rechts != null) {}
-			int diepteRechts = rechts.getDiepte();
-			return (diepteRechts +1);
-	}
-		
-		
-	}
+}
 	
 	
 
