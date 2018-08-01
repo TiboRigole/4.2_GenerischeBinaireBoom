@@ -69,7 +69,7 @@ public class BinaireBoom {
 		}
 	}
 	
-	
+	//private, want wordt enkel gebruikt in de klasse zelf
 	private boolean zitErAlIn(int waarde) {
 		
 		if (wortel == null) {
@@ -106,7 +106,6 @@ public class BinaireBoom {
 		Element e = new Element(waarde);
 		this.verwijder(e);
 	}
-	
 	public void verwijder(Element element) {
 		System.out.println("element verwijderen");
 		//itereer over alles
@@ -159,6 +158,7 @@ public class BinaireBoom {
 		schrijfInOrder(wortel);
 	}
 	
+	//private, want wordt enkel gebruikt in de klasse zelf
 	private void schrijfInOrder(Element node) {
 		if (node != null) {
 			schrijfInOrder(node.getLinks());
@@ -168,10 +168,12 @@ public class BinaireBoom {
 		
 	}
 
+	
 	public void schrijfPreOrder() {
 		schrijfPreOrder(wortel);
 	}
 	
+	//private, want wordt enkel gebruikt in de klasse zelf
 	private void schrijfPreOrder(Element node) {
 		if (node != null) {
 			System.out.println(node.getWaarde());
@@ -185,6 +187,7 @@ public class BinaireBoom {
 		schrijfPostOrder(wortel);
 	}
 	
+	//private, want wordt enkel gebruikt in de klasse zelf
 	private void schrijfPostOrder(Element node) {
 		if (node != null) {
 			schrijfInOrder(node.getLinks());
@@ -198,6 +201,7 @@ public class BinaireBoom {
 		return getDiepte(wortel);
 	}
 
+	//private, want wordt enkel gebruikt in de klasse zelf
 	private int getDiepte(Element node) {
 		if(node == null) {	//checken van de wortel
 			return 0;
@@ -211,6 +215,26 @@ public class BinaireBoom {
         }
 			
 	}
+	
+	protected ArrayList<Integer> stelArrayListOp(){
+		ArrayList<Integer> alijst = new ArrayList<Integer>();
+	
+		visitAlleEnVoegToe(wortel,alijst);
+		//itereer doorheen alle items
+			//voeg hun getalWaarde toe aan de arrayList
+		
+		return alijst;
+	}
+	
+	private void visitAlleEnVoegToe(Element node, ArrayList<Integer> alijst) {
+		
+		if(node.getLinks() != null) {visitAlleEnVoegToe(node.getLinks() , alijst);}
+	    if(node.getRechts() != null) {visitAlleEnVoegToe(node.getRechts() , alijst);}
+	    int getal = node.getWaarde();
+	    if(!alijst.contains(getal)) {alijst.add(getal);}
+	    
+	}
+	    
 	
 }
 
