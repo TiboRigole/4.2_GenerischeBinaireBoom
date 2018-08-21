@@ -1,14 +1,14 @@
-/*
+
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class GebalanceerdeBinaireBoom extends BinaireBoom {
+public class GebalanceerdeBinaireBoom<T extends Comparable<T>> extends BinaireBoom<T> {
 
-    private ArrayList<Integer> getallenLijst;
+    private ArrayList<T> getallenLijst;
 
     public GebalanceerdeBinaireBoom() {
         super();
-        getallenLijst = new ArrayList<Integer>();
+        getallenLijst = new ArrayList<T>();
     }
 
     //methoden die enkel in de klasse zelf moeten gebruikt worden
@@ -18,7 +18,7 @@ public class GebalanceerdeBinaireBoom extends BinaireBoom {
         Collections.sort(getallenLijst);
     }
 
-    private Element tekenGebalanceerdeBinaireBoom(ArrayList<Integer> getallenLijst, int start, int einde) {
+    private Element<T> tekenGebalanceerdeBinaireBoom(ArrayList<T> getallenLijst, int start, int einde) {
         //basis case
         if (start > einde) {
             return null;
@@ -26,18 +26,15 @@ public class GebalanceerdeBinaireBoom extends BinaireBoom {
 
         //stap 1  Get the middle element and make it root
         int midden = (start + einde) / 2;
-        Element element = new Element(getallenLijst.get(midden));
+        Element<T> element = new Element(getallenLijst.get(midden));
 
-        */
-/* Recursively construct the left subtree and make it
-         left child of root *//*
 
+        /* Recursively construct the left subtree and make it
+         left child of root */
         element.setLinks(tekenGebalanceerdeBinaireBoom(getallenLijst, start, midden - 1));
 
-        */
-/* Recursively construct the right subtree and make it
-         right child of root *//*
-
+        /* Recursively construct the right subtree and make it
+         right child of root */
         element.setRechts(tekenGebalanceerdeBinaireBoom(getallenLijst, midden + 1, einde));
 
         return element;
@@ -51,26 +48,26 @@ public class GebalanceerdeBinaireBoom extends BinaireBoom {
 
     //overriden van de methoden van BinaireBoom
     @Override
-    public void voegToe(int waarde) {
+    public void voegToe(T waarde) {
         super.voegToe(waarde);
         stelListOp();
 
     }
 
     @Override
-    public void voegToe(Element element) {
+    public void voegToe(Element<T> element) {
         super.voegToe(element);
         stelListOp();
     }
 
     @Override
-    public void verwijder(int waarde) {
+    public void verwijder(T waarde) {
         super.verwijder(waarde);
         stelListOp();
     }
 
     @Override
-    public void verwijder(Element element) {
+    public void verwijder(Element<T> element) {
         super.verwijder(element.getWaarde());
         stelListOp();
     }
@@ -98,4 +95,4 @@ public class GebalanceerdeBinaireBoom extends BinaireBoom {
         return super.getDiepte();
     }
 }
-*/
+

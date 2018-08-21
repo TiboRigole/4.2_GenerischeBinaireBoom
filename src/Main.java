@@ -2,7 +2,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		System.out.println("testing binaire boom");
+		/*System.out.println("testing binaire boom");
 		BinaireBoom<Integer> b = new BinaireBoom<>();
 		b.voegToe(new Element(8));
 		b.voegToe(new Element(3));
@@ -27,9 +27,9 @@ public class Main {
 		
 		System.out.println("");
 		System.out.println("");
-		System.out.println("balanceerde binaire boom");
+		System.out.println("balanceerde binaire boom");*/
 
-		/*GebalanceerdeBinaireBoom gbbb = new GebalanceerdeBinaireBoom();
+		GebalanceerdeBinaireBoom gbbb = new GebalanceerdeBinaireBoom();
 		gbbb.voegToe(new Element(8));
 		gbbb.voegToe(new Element(3));
 		gbbb.voegToe(new Element(10));
@@ -50,7 +50,7 @@ public class Main {
 		System.out.println("diepte");
 		System.out.println(gbbb.getDiepte());
 		
-		*/
+
 		
 	}
 
